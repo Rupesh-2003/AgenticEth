@@ -80,6 +80,11 @@ def chat():
     # Return the last response (or all responses if needed)
     return jsonify({"response": responses[-1]})
 
+@app.route("/ping", methods=["GET"])
+def ping():
+    """Simple endpoint to check if the server is running."""
+    return jsonify({"message": "pong"})
+
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5001))
     app.run(host="0.0.0.0", port=port, debug=True)
