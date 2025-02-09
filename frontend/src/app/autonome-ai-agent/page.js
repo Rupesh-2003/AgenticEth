@@ -80,17 +80,17 @@ export default function Chat() {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-gradient-to-r from-gray-900 via-purple-900 to-black p-4">
+    <div className="h-[calc(100vh-64px)] flex flex-col bg-gradient-to-r from-gray-900 via-purple-900 to-black p-4">
       <header className="shadow-sm py-4">
-        <h1 className="text-2xl font-bold text-center text-white">Ask any AI related doubts</h1>
+        <h1 className="text-2xl font-bold text-center text-white">Ask any AI-Blockchain related doubts 🤖💡</h1>
       </header>
       <div className="flex-1 overflow-auto" ref={chatContainerRef}>
-        <Card className="w-full h-[75vh] overflow-y-auto bg-gray-800 border border-purple-500 shadow-lg rounded-lg">
+        <Card className="w-[90%] mx-auto h-[65vh] overflow-y-auto bg-gray-800 border border-purple-500 shadow-lg rounded-lg">
           <CardContent className="h-full p-4 border text-white">
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`p-3 my-2 rounded-lg max-w-[80%] ${
+                className={`p-3 my-2 rounded-lg max-w-[60%] ${
                   msg.role === "user" ? "bg-purple-600 text-white ml-auto" : "bg-gray-700 text-white"
                 }`}
                 dangerouslySetInnerHTML={{ __html: msg.text }}
@@ -109,7 +109,7 @@ export default function Chat() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <Button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-r-md" onClick={sendMessage} disabled={loading}>
+          <Button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 ml-[10px] rounded-r-md" onClick={sendMessage} disabled={loading}>
             {loading ? <ScaleLoader color="#fff" height={15} /> : "Send"}
           </Button>
         </div>

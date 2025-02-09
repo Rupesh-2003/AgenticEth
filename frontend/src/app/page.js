@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Message from "../components/Message"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { ScaleLoader } from "react-spinners";
 
 export default function Home() {
   const [messages, setMessages] = useState([])
@@ -52,7 +53,7 @@ export default function Home() {
   return (
     <div className="flex flex-col h-[calc(100vh-64px)] bg-gray-100">
       <header className="bg-white shadow-sm py-4">
-        <h1 className="text-2xl font-bold text-center text-gray-800">Tell any tasks to perform with your wallet.</h1>
+        <h1 className="text-2xl font-bold text-center text-gray-800">Share tasks you'd like to perform with your wallet 🔐💳</h1>
       </header>
       <main className="flex-1 overflow-y-auto p-4">
         <div className="max-w-2xl mx-auto">
@@ -66,7 +67,8 @@ export default function Home() {
                   <AvatarImage src="/ai-avatar.png" />
                   <AvatarFallback>AI</AvatarFallback>
                 </Avatar>
-                <div className="rounded-lg p-3 bg-blue-100 text-blue-900">Thinking...</div>
+                {/* <div className="rounded-lg p-3 bg-blue-100 text-blue-900">Thinking...</div> */}
+                <div className="text-gray-400"><ScaleLoader color="#A855F7" height={15} /></div>
               </div>
             </div>
           )}
